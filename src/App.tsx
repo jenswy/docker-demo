@@ -17,12 +17,13 @@ function App() {
 
   
   const computeResult = () => {
-    console.log('firstNumber', firstNumber);
-    console.log('secondNumber', secondNumber);
+    
     if (isNaN(firstNumber) || isNaN(secondNumber)) {
       setResult(NaN);
       setError('Please enter a valid number in both fields');
       return;
+    } else {
+      setError('');
     }
     if (operator === '+') setResult(firstNumber + secondNumber);
     if (operator === '-') setResult(firstNumber - secondNumber);
@@ -33,6 +34,7 @@ function App() {
         setError('Cannot divide by zero');
       } else {
         setResult(firstNumber / secondNumber);
+        setError('');
 
       } 
     };
